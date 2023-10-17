@@ -20,14 +20,14 @@ const NavBar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Car Hut</a>
+                <a className="btn btn-ghost normal-case text-xl z-10">Car Hut</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {menuItems}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end z-10">
                 <Link to='/signin'><button className="btn">SignIn</button></Link>
             </div>
         </div>
