@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -8,6 +8,7 @@ import withReactContent from 'sweetalert2-react-content'
 
 
 const SignUp = () => {
+    const navigate = useNavigate()
     const MySwal = withReactContent(Swal)
     const { createUser, signInWithGoogle, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState(null)
@@ -38,7 +39,7 @@ const SignUp = () => {
                         "Your new account is ready. We’re thrilled to have you with us!!",
                         'success'
                     )
-                    // navigate('/')
+                    navigate('/')
 
                 })
                 .catch(error => {
@@ -56,7 +57,7 @@ const SignUp = () => {
                     "Your new account is ready. We’re thrilled to have you with us!",
                     'success'
                 )
-                // navigate('/')
+                navigate('/')
             })
             .catch(error => {
                 console.error(error);

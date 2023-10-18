@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 
 const SignIn = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
     const MySwal = withReactContent(Swal)
     const { signIn } = useContext(AuthContext);
     const [error, setError] = useState(null)
@@ -24,7 +26,7 @@ const SignIn = () => {
                     "Logged in successfully. Welcome back!",
                     'success'
                 )
-                // navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
 

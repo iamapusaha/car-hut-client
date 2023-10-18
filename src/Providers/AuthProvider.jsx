@@ -8,36 +8,42 @@ import { GoogleAuthProvider } from "firebase/auth";
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
+    const [loding, setLoading] = useState(true)
     const googleProvider = new GoogleAuthProvider();
     const auth = getAuth(app);
 
 
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const signIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     const signInWithGoogle = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
     const updateUserProfile = (name, photo) => {
+        setLoading(true)
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
         })
     }
     const logOut = () => {
+        setLoading(true)
         signOut(auth)
     }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             if (currentUser) {
                 setUser(currentUser)
-                // setLoading(false)
+                setLoading(false)
                 console.log("form obeser", currentUser);
             }
             else {
-                // setLoading(false)
+                setLoading(false)
             }
         })
         return () => {
@@ -50,7 +56,8 @@ const AuthProvider = ({ children }) => {
         signIn,
         signInWithGoogle,
         updateUserProfile,
-        logOut
+        logOut,
+        loding
     }
     return (
         <AuthContext.Provider value={authInfo}>
