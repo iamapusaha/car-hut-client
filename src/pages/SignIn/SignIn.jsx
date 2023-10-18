@@ -1,31 +1,38 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 const SignIn = () => {
+    const MySwal = withReactContent(Swal)
+    const { signIn } = useContext(AuthContext);
+    const [error, setError] = useState(null)
     const handleSignIn = e => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
         const email = form.get('email');
         const password = form.get('password');
         console.log(email, password);
-        // signIn(email, password)
-        //     .then(result => {
-        //         setError(null)
-        //         console.log(result.user);
-        //         MySwal.fire(
-        //             'Good job!',
-        //             "Logged in successfully. Welcome back!",
-        //             'success'
-        //         )
-        //         navigate(location?.state ? location.state : '/')
-        //     })
-        //     .catch(error => {
+        signIn(email, password)
+            .then(result => {
+                setError(null)
+                console.log(result.user);
+                MySwal.fire(
+                    'Good job!',
+                    "Logged in successfully. Welcome back!",
+                    'success'
+                )
+                // navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
 
-        //         if (error.message == "Firebase: Error (auth/invalid-login-credentials).") {
-        //             setError('Email or password are not correct')
-        //         }
-        //         console.error(error);
-        //     })
+                if (error.message == "Firebase: Error (auth/invalid-login-credentials).") {
+                    setError('Email or password are not correct')
+                }
+                console.error(error);
+            })
     }
     return (
         <div className="my-16 px-3 md:px-0">
@@ -52,7 +59,7 @@ const SignIn = () => {
                 </div>
             </form>
             <p className="text-center mt-4">Dont’t Have An Account ? <Link className="text-red-400" to='/signup'>Register</Link></p>
-            <p className="text-red-600 text-center mt-2 text-xl">{ }</p>
+            <p className="text-red-600 text-center mt-2 text-xl">{error}</p>
 
         </div>
     );
