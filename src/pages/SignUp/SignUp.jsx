@@ -9,7 +9,7 @@ import withReactContent from 'sweetalert2-react-content'
 
 const SignUp = () => {
     const MySwal = withReactContent(Swal)
-    const { createUser, signInWithGoogle } = useContext(AuthContext);
+    const { createUser, signInWithGoogle, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState(null)
     const handeSignUp = e => {
         e.preventDefault()
@@ -31,7 +31,7 @@ const SignUp = () => {
             setError(null)
             createUser(email, password)
                 .then(result => {
-                    // updateUserProfile(name, photo)
+                    updateUserProfile(name, photo)
                     console.log(result.user);
                     MySwal.fire(
                         'Good job!',
