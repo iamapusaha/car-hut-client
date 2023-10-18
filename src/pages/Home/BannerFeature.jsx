@@ -1,10 +1,11 @@
 import { BsSpeedometer, BsToggleOn } from 'react-icons/bs';
 import { GiCandlebright } from 'react-icons/gi';
+import featureCar from '../../assets/feature-car.png'
 
 const BannerFeature = () => {
     return (
-        <div className='text-white flex flex-col md:flex-row'>
-            <div className=' bg-[#7F67FA] flex-1 px-3 '>
+        <div className=' flex flex-col md:flex-row'>
+            <div className=' bg-[#7F67FA] flex-1 px-3 text-white'>
 
                 <div className='flex justify-around w-full border-b-2 border-slate-300 pt-10 mb-16'>
 
@@ -27,8 +28,15 @@ const BannerFeature = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex-1 bg-[#242425]'>
-
+            <div className='flex-1 flex flex-col md:flex-row  bg-[#F6F6F6] items-end justify-evenly'>
+                <div className='flex-1 space-y-7 pl-6 mb-9'>
+                    <p className='text-2xl font-medium'>City crossover</p>
+                    <h1 className='text-4xl'>1952 The Alca Volpe Luxury Cab</h1>
+                    <h1 className='text-7xl'>01/<span className='text-[#919192]'>08</span></h1>
+                </div>
+                <div className='flex-1 w-full sm:w-fit'>
+                    <img className='w-full sm:w-fit' src={featureCar} alt="" />
+                </div>
             </div>
         </div>
     );
