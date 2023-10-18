@@ -36,7 +36,7 @@ const SignIn = () => {
     }
     return (
         <div className="my-16 px-3 md:px-0">
-            <h1 className="text-4xl font-semibold text-center mb-3">Login your account</h1>
+            <h1 className="text-4xl font-semibold text-center mb-3">SignIn with your account</h1>
             <div className="md:w-3/4 lg:w-1/2 mx-auto border-b-2 border-[#FFF781] px-3 md:px-1 mb-4"></div>
             <form onSubmit={handleSignIn} className="md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">
@@ -55,10 +55,10 @@ const SignIn = () => {
                     </label>
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn bg-[#5056D2] text-white">Login</button>
+                    <button className="btn bg-[#5056D2] text-white">SignIn</button>
                 </div>
             </form>
-            <p className="text-center mt-4">Dont’t Have An Account ? <Link className="text-red-400" to='/signup'>Register</Link></p>
+            <p className="text-center mt-4">Dont’t Have An Account ? <Link className="text-red-400" to='/signup'>SignUp</Link></p>
             <p className="text-red-600 text-center mt-2 text-xl">{error}</p>
 
         </div>

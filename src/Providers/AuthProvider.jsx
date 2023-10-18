@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import PropTypes from 'prop-types';
 import app from "../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -7,6 +7,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null)
     const googleProvider = new GoogleAuthProvider();
     const auth = getAuth(app);
 
@@ -25,6 +26,21 @@ const AuthProvider = ({ children }) => {
             displayName: name, photoURL: photo
         })
     }
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            if (currentUser) {
+                setUser(currentUser)
+                // setLoading(false)
+                console.log("form obeser", currentUser);
+            }
+            else {
+                // setLoading(false)
+            }
+        })
+        return () => {
+            unSubscribe();
+        }
+    }, [auth])
     const authInfo = {
         createUser,
         signIn,
