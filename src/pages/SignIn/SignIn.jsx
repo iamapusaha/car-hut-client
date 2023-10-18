@@ -51,7 +51,7 @@ const SignIn = () => {
                     <button className="btn bg-[#5056D2] text-white">Login</button>
                 </div>
             </form>
-            <p className="text-center mt-4">Dont’t Have An Account ? <Link className="text-red-400" to='/register'>Register</Link></p>
+            <p className="text-center mt-4">Dont’t Have An Account ? <Link className="text-red-400" to='/signup'>Register</Link></p>
             <p className="text-red-600 text-center mt-2 text-xl">{ }</p>
 
         </div>
