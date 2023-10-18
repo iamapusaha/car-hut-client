@@ -3,12 +3,14 @@
 
 import Banner from "./Banner";
 import BannerFeature from "./BannerFeature";
+import History from "./History";
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <BannerFeature></BannerFeature>
+            <History></History>
         </div>
     );
 };

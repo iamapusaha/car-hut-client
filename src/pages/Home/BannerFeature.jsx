@@ -2,6 +2,7 @@ import { BsSpeedometer, BsToggleOn } from 'react-icons/bs';
 import { GiCandlebright } from 'react-icons/gi';
 import featureCar from '../../assets/feature-car.png'
 
+
 const BannerFeature = () => {
     return (
         <div className=' flex flex-col md:flex-row'>
@@ -29,7 +30,7 @@ const BannerFeature = () => {
                 </div>
             </div>
             <div className='flex-1 flex flex-col md:flex-row  bg-[#F6F6F6] items-end justify-evenly'>
-                <div className='flex-1 space-y-7 pl-6 mb-9'>
+                <div className='flex-1 space-y-7 pl-6 mb-0 py-3 md:py-0 md:mb-9'>
                     <p className='text-2xl font-medium'>City crossover</p>
                     <h1 className='text-4xl'>1952 The Alca Volpe Luxury Cab</h1>
                     <h1 className='text-7xl'>01/<span className='text-[#919192]'>08</span></h1>
