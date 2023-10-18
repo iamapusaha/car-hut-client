@@ -8,9 +8,10 @@ const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const location = useLocation();
     if (loading) {
-        return <span className="w-16 md:w-96 loading loading-infinity text-primary"></span>
+        return <span className="w-16 md:w-96 loading loading-infinity text-[#7F67FA]"></span>
     }
     if (user) {
+
         return children;
     }
     return <Navigate state={location.pathname} to='/signin'></Navigate>
