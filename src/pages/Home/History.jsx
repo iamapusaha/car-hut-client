@@ -6,7 +6,7 @@ import { FaRightToBracket } from "react-icons/fa6";
 const History = () => {
     return (
         <div className='bg-[#E5F2FF]'>
-            <h1 className="text-3xl md:text-7xl font-bold text-center pt-10 px-5 mb-16">Telling the History of America Through the Automobile</h1>
+            <h1 className="text-3xl md:text-7xl font-bold text-center pt-10 md:w-3/4 w-full mx-auto mb-16">Telling the History of America Through the Automobile</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 justify-items-center items-start'>
                 <div className='w-60 md:w-56 lg:w-80 space-y-10'>
                     <img className='w-1/2 ' src={owner} alt="" />
