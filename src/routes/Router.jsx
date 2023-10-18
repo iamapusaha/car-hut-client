@@ -7,6 +7,7 @@ import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
 import MyCart from "../pages/MyCart/MyCart";
 import PrivateRoute from "./PrivateRoute";
+import AddBrand from "../pages/AddBrand/AddBrand";
 
 
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/my-cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
+            },
+            {
+                path: '/addbrand',
+                element: <AddBrand></AddBrand>
             }
         ]
     }
