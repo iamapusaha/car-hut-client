@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import MyCart from "../pages/MyCart/MyCart";
 import PrivateRoute from "./PrivateRoute";
 import AddBrand from "../pages/AddBrand/AddBrand";
+import AddProduct from "../pages/AddProduct/AddProduct";
 
 
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: '/addbrand',
                 element: <AddBrand></AddBrand>
+            },
+            {
+                path: '/add-product',
+                element: <AddProduct></AddProduct>
             }
         ]
     }
