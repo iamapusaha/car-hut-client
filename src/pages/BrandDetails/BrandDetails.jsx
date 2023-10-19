@@ -1,12 +1,18 @@
 import { useLoaderData } from "react-router-dom";
+import SingleBrandProduct from "../SingleBrandProduct/SingleBrandProduct";
 
 
 const BrandDetails = () => {
     const productData = useLoaderData()
-    console.log(productData);
+
     return (
         <div>
-            <h1>i am from details</h1>
+            {
+                productData.map(product => <SingleBrandProduct
+                    key={product._id}
+                    product={product}
+                ></SingleBrandProduct>)
+            }
         </div>
     );
 };
