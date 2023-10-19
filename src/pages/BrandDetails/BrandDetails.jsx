@@ -6,7 +6,7 @@ const BrandDetails = () => {
     const productData = useLoaderData()
 
     return (
-        <div>
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 my-10">
             {
                 productData.map(product => <SingleBrandProduct
                     key={product._id}
