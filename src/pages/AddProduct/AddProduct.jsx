@@ -11,19 +11,19 @@ const AddProduct = () => {
         const image = form.image.value;
         const rating = form.rating.value;
         const discription = form.discription.value;
-        const newCoffee = { name, brand, types, price, image, rating, discription }
-        console.log(newCoffee);
-        // fetch('https://coffee-shop-server-kuwzqb4pq-iamapusaha.vercel.app/coffee', {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json"
-        //     },
-        //     body: JSON.stringify(newCoffee)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
+        const newProduct = { name, brand, types, price, image, rating, discription }
+        console.log(newProduct);
+        fetch('http://localhost:5000/product', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     }
     return (
         <div className="container mx-auto my-6 bg-[#F6F6F6] p-5 rounded">
@@ -44,12 +44,12 @@ const AddProduct = () => {
                         </label>
                         <select className="select w-full" name="brand">
                             <option disabled selected>What is your Product brand?</option>
-                            <option>Mercedes-Benz</option>
-                            <option>Honda</option>
-                            <option>Jagur</option>
-                            <option>Hundai</option>
-                            <option>BMW</option>
-                            <option>Tesla</option>
+                            <option>mercedes</option>
+                            <option>honda</option>
+                            <option>jaguar</option>
+                            <option>hundai</option>
+                            <option>bmw</option>
+                            <option>tesla</option>
                         </select>
                     </div>
                 </div>

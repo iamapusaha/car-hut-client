@@ -7,7 +7,7 @@ const BrandItems = ({ brand }) => {
     const { name, photo } = brand;
 
     return (
-        <Link to={`/${name}`}>
+        <Link to={`/product/${name}`}>
             < div className='border-2 rounded border-yellow-400'>
                 <img className='w-52 h-52' src={photo} alt="" />
                 <p>{name}</p>
