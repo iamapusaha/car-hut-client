@@ -5,6 +5,7 @@ import Brand from "../Brand/Brand";
 import Banner from "./Banner";
 import BannerFeature from "./BannerFeature";
 import History from "./History";
+import JoinUs from "./JoinUs";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <BannerFeature></BannerFeature>
             <History></History>
             <Brand></Brand>
+            <JoinUs></JoinUs>
         </div>
     );
 };
