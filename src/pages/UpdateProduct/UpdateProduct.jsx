@@ -1,7 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const UpdateProduct = () => {
+    const MySwal = withReactContent(Swal)
     const product = useLoaderData()
     const { _id, name, brand, types, price, image, rating, discription } = product;
     const handleUpdateProduct = e => {
@@ -26,6 +28,13 @@ const UpdateProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data) {
+                    MySwal.fire(
+                        'Good job!',
+                        'Product data updated!',
+                        'success'
+                    )
+                }
             })
     }
     return (

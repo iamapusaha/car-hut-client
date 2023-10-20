@@ -1,6 +1,8 @@
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const AddProduct = () => {
+    const MySwal = withReactContent(Swal)
     const handleAddProduct = e => {
         e.preventDefault()
         const form = e.target;
@@ -23,6 +25,13 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data) {
+                    MySwal.fire(
+                        'Good job!',
+                        'added new product!',
+                        'success'
+                    )
+                }
             })
     }
     return (

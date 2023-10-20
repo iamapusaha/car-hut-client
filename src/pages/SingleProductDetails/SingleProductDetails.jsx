@@ -1,8 +1,10 @@
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 // import PropTypes from 'prop-types';
 import { useLoaderData } from 'react-router-dom';
 
 const SingleProductDetails = () => {
+    const MySwal = withReactContent(Swal)
     const productDetails = useLoaderData()
 
     const { name, brand, types, price, image, rating, discription } = productDetails;
@@ -15,6 +17,17 @@ const SingleProductDetails = () => {
             },
             body: JSON.stringify(newProduct)
         })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data) {
+                    MySwal.fire(
+                        'Good job!',
+                        'added the item in cart!',
+                        'success'
+                    )
+                }
+            })
     }
     return (
         <div className="card min-w-96 bg-base-100 shadow-xl">
