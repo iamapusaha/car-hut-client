@@ -1,14 +1,29 @@
 import { useLoaderData } from "react-router-dom";
 import SingleBrandProduct from "../SingleBrandProduct/SingleBrandProduct";
+import { useEffect, useState } from "react";
+import Slider from "../Slider/Slider";
 
 
 const BrandDetails = () => {
     const productData = useLoaderData()
-    const brand = productData[0].brand
+    const brand = productData[0].brand;
+    const [sliders, setSliders] = useState()
+    useEffect(() => {
+        fetch(`http://localhost:5000/slider/${brand}`)
+            .then(res => res.json())
+            .then(data => setSliders(data))
+    }, [brand])
     return (
-        <div className="border border-red-500">
-            <h1 className="">{brand}</h1>
-            <div className="border border-blue-600 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 my-8">
+        <div className="">
+            <div>
+                {
+                    sliders?.map(slider => <Slider
+                        key={slider._id}
+                        slider={slider}
+                    ></Slider>)
+                }
+            </div>
+            <div className=" grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 my-8">
                 {
                     productData.map(product => <SingleBrandProduct
                         key={product._id}

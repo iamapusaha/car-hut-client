@@ -4,13 +4,13 @@ const AddSlider = () => {
     const handleAddSlider = e => {
         e.preventDefault()
         const form = e.target;
-        const brand = form.name.value;
+        const brand = form.brand.value;
         const photo = form.photo.value;
         const photo2 = form.photo2.value;
         const photo3 = form.photo3.value;
         const slider = { brand, photo, photo2, photo3 }
         console.log(slider);
-        fetch('http://localhost', {
+        fetch('http://localhost:5000/slider', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
