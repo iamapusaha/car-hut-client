@@ -15,7 +15,7 @@ const AddProduct = () => {
         const discription = form.discription.value;
         const newProduct = { name, brand, types, price, image, rating, discription }
         console.log(newProduct);
-        fetch('http://localhost:5000/product', {
+        fetch('https://car-hut-server-sand.vercel.app/product', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -9,7 +9,7 @@ const BrandDetails = () => {
     const brand = productData[0].brand;
     const [sliders, setSliders] = useState()
     useEffect(() => {
-        fetch(`http://localhost:5000/slider/${brand}`)
+        fetch(`https://car-hut-server-sand.vercel.app/slider/${brand}`)
             .then(res => res.json())
             .then(data => setSliders(data))
     }, [brand])

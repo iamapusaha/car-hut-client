@@ -21,7 +21,7 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/cart/${id}`, {
+                fetch(`https://car-hut-server-sand.vercel.app/cart/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -42,7 +42,7 @@ const MyCart = () => {
     }
     return (
         <div className="overflow-x-auto mx-auto container">
-            <table className="table">
+            <table className="table table-pin-cols">
                 {/* head */}
                 <thead>
                     <tr>

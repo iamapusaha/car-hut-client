@@ -10,7 +10,7 @@ const SingleProductDetails = () => {
     const { name, brand, types, price, image, rating, discription } = productDetails;
     const newProduct = { name, brand, types, price, image, rating, discription }
     const handleADDToCart = () => {
-        fetch('http://localhost:5000/cart', {
+        fetch('https://car-hut-server-sand.vercel.app/cart', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

@@ -1,4 +1,5 @@
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 // import PropTypes from 'prop-types';
 
 import { useContext } from "react";
@@ -6,11 +7,16 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const NavBar = () => {
+    const MySwal = withReactContent(Swal)
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                alert('you have successfully logOut')
+                MySwal.fire(
+                    'Good job!',
+                    'sussfully loaged out!',
+                    'success'
+                )
             })
             .catch(error => {
                 console.error(error);

@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path: '/my-cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/cart')
+                loader: () => fetch('https://car-hut-server-sand.vercel.app/cart')
             },
             {
                 path: '/addbrand',
@@ -52,18 +52,18 @@ const router = createBrowserRouter([
             {
                 path: '/product/:brand',
                 element: <BrandDetails></BrandDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/product/${params.brand}`)
+                loader: ({ params }) => fetch(`https://car-hut-server-sand.vercel.app/product/${params.brand}`)
 
             },
             {
                 path: '/product/details/:id',
                 element: <PrivateRoute><SingleProductDetails></SingleProductDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://car-hut-server-sand.vercel.app/products/${params.id}`)
             },
             {
                 path: 'product/update/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://car-hut-server-sand.vercel.app/products/${params.id}`)
             },
             {
                 path: '/addslider',

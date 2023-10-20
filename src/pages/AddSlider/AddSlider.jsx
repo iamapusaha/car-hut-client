@@ -10,7 +10,7 @@ const AddSlider = () => {
         const photo3 = form.photo3.value;
         const slider = { brand, photo, photo2, photo3 }
         console.log(slider);
-        fetch('http://localhost:5000/slider', {
+        fetch('https://car-hut-server-sand.vercel.app/slider', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
