@@ -9,10 +9,17 @@ const SingleBrandProduct = ({ product }) => {
             <figure><img className='h-64' src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
-                    Shoes!
-                    <div className="badge badge-secondary">NEW</div>
+                    {name}
+                    <div className="badge bg-[#DCE2FF]">{brand}</div>
                 </h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <p>
+                    {
+                        discription.length > 50 ? discription.slice(0, 100) : discription
+                    }
+                </p>
+                <p>Car types: {types}</p>
+                <p>Price: ${price}</p>
+                <p>Rating: {rating}</p>
                 <div className="card-actions justify-end">
                     <Link to={`/product/details/${_id}`}><button className="badge badge-outline">Details</button></Link>
                     <Link to={`/product/update/${_id}`}><button className="badge badge-outline">update</button></Link>

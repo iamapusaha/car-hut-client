@@ -35,7 +35,7 @@ const UpdateProduct = () => {
                 <div className="md:flex gap-3 px-2 md:px-1 mb-6">
                     <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text">product Name</span>
+                            <span className="label-text">Product Name</span>
                         </label>
                         <label className="input-group ">
                             <input type="text" defaultValue={name} name="name" placeholder="product name" className="input input-bordered w-full" />
@@ -82,7 +82,7 @@ const UpdateProduct = () => {
                 <div className="md:flex gap-3 px-2 md:px-1 mb-6">
                     <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text">product image</span>
+                            <span className="label-text">Product image</span>
                         </label>
                         <label className="input-group ">
                             <input type="text" defaultValue={image} name="image" placeholder="product image utl" className="input input-bordered w-full" />

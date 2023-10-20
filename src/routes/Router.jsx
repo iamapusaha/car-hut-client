@@ -12,6 +12,7 @@ import AddProduct from "../pages/AddProduct/AddProduct";
 import BrandDetails from "../pages/BrandDetails/BrandDetails";
 import SingleProductDetails from "../pages/SingleProductDetails/SingleProductDetails";
 import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
+import AddSlider from "../pages/AddSlider/AddSlider";
 
 
 
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
                 path: 'product/update/:id',
                 element: <UpdateProduct></UpdateProduct>,
                 loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+            },
+            {
+                path: '/addslider',
+                element: <AddSlider></AddSlider>
             }
         ]
     }
