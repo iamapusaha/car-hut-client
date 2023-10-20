@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddBrand from "../pages/AddBrand/AddBrand";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import BrandDetails from "../pages/BrandDetails/BrandDetails";
+import SingleProductDetails from "../pages/SingleProductDetails/SingleProductDetails";
 
 
 
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
                 element: <BrandDetails></BrandDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/product/${params.brand}`)
 
+            },
+            {
+                path: '/product/details/:id',
+                element: <SingleProductDetails></SingleProductDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
             }
         ]
     }

@@ -14,8 +14,8 @@ const SingleBrandProduct = ({ product }) => {
                 </h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div className="card-actions justify-end">
-                    <Link to={`/details/${_id}`}><button className="badge badge-outline">Details</button></Link>
-                    <Link to={`/update/${_id}`}><button className="badge badge-outline">update</button></Link>
+                    <Link to={`/product/details/${_id}`}><button className="badge badge-outline">Details</button></Link>
+                    <Link to={`/product/update/${_id}`}><button className="badge badge-outline">update</button></Link>
                 </div>
             </div>
         </div>
