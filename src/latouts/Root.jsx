@@ -3,7 +3,7 @@ import NavBar from "../pages/Shared/NavBar/NavBar";
 
 const Root = () => {
     return (
-        <div className="container mx-auto my-6">
+        <div className="container mx-auto">
             <NavBar></NavBar>
             <Outlet></Outlet>
         </div>

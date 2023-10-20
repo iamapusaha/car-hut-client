@@ -2,7 +2,7 @@ import banner from '../../assets/alca-volpo-cab.png'
 
 const Banner = () => {
     return (
-        <div className='flex flex-col md:flex-row items-center -mt-16 z-0 bg-[#F6F6F6]'>
+        <div className='flex flex-col md:flex-row items-center -mt-20 z-0 bg-[#F6F6F6]'>
             <div className='md:flex-1 px-3 space-y-8 bg-[#FFF781] h-fit md:h-[800px] p-16 '>
                 <div className='flex items-center md:h-[600px]'>
                     <div className='px-3 md:px-5 lg:px-20 '>

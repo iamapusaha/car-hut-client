@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 // import PropTypes from 'prop-types';
-
+import logo from '../../../assets/logo.png'
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
@@ -38,7 +38,12 @@ const NavBar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl z-10">Car Hut</a>
+                <div className='z-50'>
+                    <Link className='flex items-center gap-1'>
+                        <img className='w-14' src={logo} alt="" />
+                        <button className="normal-case text-xl">Car Hut</button>
+                    </Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
