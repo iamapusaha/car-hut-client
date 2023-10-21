@@ -41,7 +41,7 @@ const MyCart = () => {
         })
     }
     return (
-        <div className="overflow-x-auto mx-auto container">
+        <div className="overflow-x-auto mx-auto container my-12">
             <table className="table table-pin-cols">
                 {/* head */}
                 <thead>

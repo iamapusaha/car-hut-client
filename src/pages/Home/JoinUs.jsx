@@ -2,7 +2,7 @@ import { FaRightToBracket } from "react-icons/fa6";
 import join from '../../assets/join-us.png'
 const JoinUs = () => {
     return (
-        <div className="my-11 gap-5 flex flex-col md:flex-row items-center justify-center bg-[#E4F1FE] p-11">
+        <div className="my-11 gap-5 flex flex-col md:flex-row items-center justify-center bg-[#E4F1FE] py-20 px-11">
             <div className="flex-1 rounded-2xl border-8 border-white">
                 <img className="w-full" src={join} alt="" />
             </div>
