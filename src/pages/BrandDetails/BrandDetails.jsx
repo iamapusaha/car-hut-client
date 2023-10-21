@@ -5,14 +5,18 @@ import Slider from "../Slider/Slider";
 
 
 const BrandDetails = () => {
-    const productData = useLoaderData()
+
+    const productData = useLoaderData(true)
     const brand = productData[0].brand;
     const [sliders, setSliders] = useState()
+
 
     useEffect(() => {
         fetch(`https://car-hut-server-sand.vercel.app/product/${brand}`)
             .then(res => res.json())
-            .then(data => setSliders(data))
+            .then(data => {
+                setSliders(data)
+            })
     }, [brand])
     return (
         <div className="">
@@ -26,14 +30,16 @@ const BrandDetails = () => {
                 }
             </div>
             <div className=" grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 my-8">
-                {(sliders?.length > 0) ?
+                {
+                    (sliders?.length > 0) ?
 
-                    sliders?.map(product => <SingleBrandProduct
-                        key={product._id}
-                        product={product}
-                    ></SingleBrandProduct>)
-                    : <h1 className="my-6 text-xl md:text-7xl font-bold text-red-500 col-span-4 text-center">Opps! no data found for this brand</h1>
+                        sliders?.map(product => <SingleBrandProduct
+                            key={product._id}
+                            product={product}
+                        ></SingleBrandProduct>)
+                        : <h1 className="my-6 text-xl md:text-4xl font-bold text-blue-400 col-span-4 text-center">Regrettably, no cars from this brand are available at present.</h1>
                 }
+
             </div>
         </div>
     );
