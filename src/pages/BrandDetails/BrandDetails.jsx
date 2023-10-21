@@ -5,7 +5,7 @@ import Slider from "../Slider/Slider";
 
 
 const BrandDetails = () => {
-
+    const [loading, setLoading] = useState(true);
     const productData = useLoaderData(true)
     const brand = productData[0].brand;
     const [sliders, setSliders] = useState()
@@ -15,9 +15,13 @@ const BrandDetails = () => {
         fetch(`https://car-hut-server-sand.vercel.app/product/${brand}`)
             .then(res => res.json())
             .then(data => {
-                setSliders(data)
+                setSliders(data);
+                setLoading(false);
             })
     }, [brand])
+    if (loading) {
+        return <span className="w-16 md:w-96 loading loading-infinity text-[#7F67FA]"></span>
+    }
     return (
         <div className="">
 
