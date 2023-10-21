@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 const SingleBrandProduct = ({ product }) => {
     const { _id, name, brand, types, price, image, rating, discription } = product
     return (
+
+
         <div className="card min-w-96 bg-base-100 shadow-xl">
             <figure><img className='h-64' src={image} alt="Shoes" /></figure>
             <div className="card-body">
@@ -26,6 +28,7 @@ const SingleBrandProduct = ({ product }) => {
                 </div>
             </div>
         </div>
+
     );
 };
 

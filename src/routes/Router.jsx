@@ -54,7 +54,7 @@ const router = createBrowserRouter([
             {
                 path: '/product/:brand',
                 element: <BrandDetails></BrandDetails>,
-                loader: ({ params }) => fetch(`https://car-hut-server-sand.vercel.app/product/${params.brand}`)
+                loader: ({ params }) => fetch(`https://car-hut-server-sand.vercel.app/slider/${params.brand}`)
 
             },
             {

@@ -34,7 +34,7 @@ const SingleProductDetails = () => {
             })
     }
     return (
-        <div className="card min-w-96 bg-base-100 shadow-xl">
+        <div className="card min-w-96 bg-base-100 shadow-xl my-10">
             <figure><img className='h-64' src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
