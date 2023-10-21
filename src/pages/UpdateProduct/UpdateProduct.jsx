@@ -59,7 +59,7 @@ const UpdateProduct = () => {
                             <option>mercedes</option>
                             <option>honda</option>
                             <option>jaguar</option>
-                            <option>hundai</option>
+                            <option>hyundai</option>
                             <option>bmw</option>
                             <option>tesla</option>
                         </select>

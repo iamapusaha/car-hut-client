@@ -2,13 +2,17 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 // import PropTypes from 'prop-types';
 import { useLoaderData } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const SingleProductDetails = () => {
+    const { user } = useContext(AuthContext);
+    const email = user.email;
     const MySwal = withReactContent(Swal)
     const productDetails = useLoaderData()
 
     const { name, brand, types, price, image, rating, discription } = productDetails;
-    const newProduct = { name, brand, types, price, image, rating, discription }
+    const newProduct = { email, name, brand, types, price, image, rating, discription }
     const handleADDToCart = () => {
         fetch('https://car-hut-server-sand.vercel.app/cart', {
             method: 'POST',

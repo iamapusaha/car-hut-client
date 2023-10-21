@@ -1,5 +1,6 @@
 
 import { createBrowserRouter } from "react-router-dom";
+
 import Root from "../latouts/Root";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
@@ -19,6 +20,7 @@ import AddSlider from "../pages/AddSlider/AddSlider";
 
 
 const router = createBrowserRouter([
+
     {
         path: '/',
         element: <Root></Root>,
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
             {
                 path: '/my-cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: () => fetch('https://car-hut-server-sand.vercel.app/cart')
+                // loader: () => fetch('https://car-hut-server-sand.vercel.app/cart')
             },
             {
                 path: '/addbrand',

@@ -2,13 +2,21 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 // import PropTypes from 'prop-types';
 
-import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+// import { useLoaderData } from "react-router-dom";
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const MyCart = () => {
+    const { user } = useContext(AuthContext);
+    const email = user.email;
     const MySwal = withReactContent(Swal)
-    const cartsData = useLoaderData()
-    const [cartData, setCartData] = useState(cartsData)
+    // const cartsData = useLoaderData()
+    const [cartData, setCartData] = useState([])
+    useEffect(() => {
+        fetch(`https://car-hut-server-sand.vercel.app/cart/${email}`)
+            .then(res => res.json())
+            .then(data => setCartData(data))
+    }, [email])
     const handleDeleteItems = id => {
         MySwal.fire({
             title: 'Are you sure?',
