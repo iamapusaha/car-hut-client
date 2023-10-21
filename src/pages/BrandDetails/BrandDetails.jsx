@@ -24,11 +24,12 @@ const BrandDetails = () => {
                 }
             </div>
             <div className=" grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 my-8">
-                {
+                {productData ?
                     productData.map(product => <SingleBrandProduct
                         key={product._id}
                         product={product}
                     ></SingleBrandProduct>)
+                    : <h1>No Product Available in this brand in right now</h1>
                 }
             </div>
         </div>
