@@ -20,3 +20,11 @@ live website link: https://car-hut-2f931.web.app/
 - Each car on our website is presented in a single card format that provides some basic information about the vehicle. If you’re interested in learning more, simply click the “Details” button for a comprehensive overview. Additionally, if you’re an admin of the site, you’ll find an “Update” button on each card. This feature allows you to easily update any information about the car as needed.
 
 - in the product details page.you can find a add to cart button,if you want to add in you cart.then you have succfully sweet aalert.and after add to cart you can find on my cart page .you can find out all added items there,you your mind change you can delete and items there any time
+
+ ## Discription
+
+Welcome to our online automobile marketplace, a platform where car enthusiasts can explore, buy, and even contribute to our extensive collection of vehicles. From the latest models to classic gems, we offer a diverse range of brands to cater to all tastes. Our user-friendly interface, secure login system, and interactive features like ‘Add Product’ and ‘My Cart’ ensure a seamless shopping experience. Whether you’re browsing, buying, or contributing, our platform puts you in the driver’s seat.
+
+## Technology i use
+HTML, CSS, Tailwind CSS, JavaScript, React, Node.js, Express.js, MongoDB,
+Firebase, and Vercel.

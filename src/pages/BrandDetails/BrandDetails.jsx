@@ -43,7 +43,6 @@ const BrandDetails = () => {
                         ></SingleBrandProduct>)
                         : <h1 className="my-6 text-xl md:text-4xl font-bold text-blue-400 col-span-4 text-center">Regrettably, no cars from this brand are available at present.</h1>
                 }
-
             </div>
         </div>
     );
